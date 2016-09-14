@@ -261,27 +261,27 @@ public class RuleEngine {
 		
 		public static void main(String[] args) throws Exception {
 
-						
+			String problem="";
+			System.out.println("-----Lightweight Rule Engine------");
+			if (args.length!=1 || (args.length==1 && !args[0].contains("="))){
+				System.out.println("Usage: ant run <equation>");
+				System.out.println("No equation provided, demo with equation -3x+2=14");
+				problem="-3x+2=14";
+			}
+			else{
+				problem=args[0];
+			}
 			/*Create a new algebra task */
-			AlgebraTask equationProblem=new AlgebraTask("-3x+2=14");
+			AlgebraTask equationProblem=new AlgebraTask(problem);
 			/*Create an instance of the rule engine*/
 			RuleEngine algebraSolver=new RuleEngine(equationProblem);
 			/*Solve...*/
-			System.out.println("Solving problem "+equationProblem.getTaskName()+"...");
+			System.out.println("Solving equation "+equationProblem.getTaskName()+"...");
 			SolutionGraph solution=algebraSolver.runEngine();
-			System.out.println("Solution on Interface:");
+			System.out.println("\nSolution on Interface:");
 			System.out.println(equationProblem.getTaskInterface().displaySolution(solution));
 			System.out.println("\nSolution Graph:");
 			solution.printGraph();
-			
-			/*Refresh the task for a new problem*/
-			equationProblem.updateTaskName("x+3=5");
-			algebraSolver.resetRuleEngine(equationProblem);
-			solution=algebraSolver.runEngine();
-			System.out.println("Solution on Interface:");
-			System.out.println(equationProblem.getTaskInterface().displaySolution(solution));
-			System.out.println("\nSolution Graph:");
-			solution.printGraph();	
 			
 					 	
 		}

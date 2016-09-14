@@ -6,9 +6,7 @@
   <!-- set global properties for this build -->
   <property name="src" location="src"/>
   <property name="bin" location="bin"/>
-  <!--<property name="dist"  location="dist"/>-->
-  <property name="jessJarPath" value="/Users/nbarba/CMU/Tomodachi8-1-7-macfriendly/lib/jess.jar"></property>
-
+  <property name="jessJarPath" value="path_to_jess_jar"></property>
 
   <target name="init">
     <!-- Create the time stamp -->
@@ -27,33 +25,21 @@
     </javac>
   </target>
 
-  <!--<target name="dist" depends="compile"
-        description="generate the distribution" > -->
-    <!-- Create the distribution directory -->
-  <!--  <mkdir dir="${dist}/lib"/> -->
-
-    <!-- Put everything in ${bin} into the MyProject-${DSTAMP}.jar file -->
- <!--   <jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${bin}"/>
-  </target>-->
 
  	<target name="run" description="runs the engine">
-        <java classname="engine/RuleEngine" fork="true">
+      <java classname="engine/RuleEngine" fork="true">
+          <arg value="${equation}"/>
         	<classpath>
-				<pathelement path="${jessJarPath}" />
+				    <pathelement path="${jessJarPath}" />
        			<pathelement location="${bin}"/>
-			</classpath>
-        </java>
+			   </classpath>
+      </java>
     </target>
-
-	<!--<target name="run">
-        <java jar="build/jar/HelloWorld.jar" fork="true"/>
-    </target>-->
 
 
   <target name="clean"
         description="clean up" >
     <!-- Delete the ${build} and ${dist} directory trees -->
     <delete dir="${bin}"/>
-    <!--<delete dir="${dist}"/>-->
   </target>
 </project>
