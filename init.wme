@@ -1,0 +1,138 @@
+;; for Eclipse, etc., specify templates to read
+(require* wmeTypes "wmeTypes.clp")
+
+;;;; Fact assertions: slot assignments are below.
+
+(bind ?var1 (assert(MAIN::cell (name wmeTable_C3R1))))
+(bind ?var2 (assert(MAIN::cell (name wmeTable_C3R2))))
+(bind ?var3 (assert(MAIN::cell (name wmeTable_C3R3))))
+(bind ?var7 (assert(MAIN::column (name wmeTable_Column3))))
+(bind ?var9 (assert(MAIN::cell (name wmeTable_C2R1))))
+(bind ?var10 (assert(MAIN::cell (name wmeTable_C2R2))))
+(bind ?var11 (assert(MAIN::cell (name wmeTable_C2R3))))
+(bind ?var15 (assert(MAIN::column (name wmeTable_Column2))))
+(bind ?var17 (assert(MAIN::cell (name wmeTable_C1R1))))
+(bind ?var18 (assert(MAIN::cell (name wmeTable_C1R2))))
+(bind ?var19 (assert(MAIN::cell (name wmeTable_C1R3))))
+(bind ?var23 (assert(MAIN::column (name wmeTable_Column1))))
+(bind ?var24 (assert(MAIN::table (name wmeTable))))
+(bind ?var28 (assert(MAIN::button (name hint))))
+(bind ?var31 (assert(MAIN::button (name done))))
+(bind ?var33 (assert(MAIN::problem (name init))))
+
+;;;; Slot assignments
+
+; MAIN::cell
+(modify ?var1
+    (name wmeTable_C3R1)
+    (value nil)
+    (description nil)
+    (row-number 1)
+    (column-number 1)
+)
+; MAIN::cell
+(modify ?var2
+    (name wmeTable_C3R2)
+    (value nil)
+    (description nil)
+    (row-number 2)
+    (column-number 1)
+)
+; MAIN::cell
+(modify ?var3
+    (name wmeTable_C3R3)
+    (value nil)
+    (description nil)
+    (row-number 3)
+    (column-number 1)
+)
+; MAIN::column
+(modify ?var7
+    (name wmeTable_Column3)
+    (cells ?var1 ?var2 ?var3)
+    (position 1)
+    (description nil)
+)
+; MAIN::cell
+(modify ?var9
+    (name wmeTable_C2R1)
+    (value nil)
+    (description nil)
+    (row-number 1)
+    (column-number 1)
+)
+; MAIN::cell
+(modify ?var10
+    (name wmeTable_C2R2)
+    (value nil)
+    (description nil)
+    (row-number 2)
+    (column-number 1)
+)
+; MAIN::cell
+(modify ?var11
+    (name wmeTable_C2R3)
+    (value nil)
+    (description nil)
+    (row-number 3)
+    (column-number 1)
+)
+; MAIN::column
+(modify ?var15
+    (name wmeTable_Column2)
+    (cells ?var9 ?var10 ?var11)
+    (position 1)
+    (description nil)
+)
+; MAIN::cell
+(modify ?var17
+    (name wmeTable_C1R1)
+    (value nil)
+    (description nil)
+    (row-number 1)
+    (column-number 1)
+)
+; MAIN::cell
+(modify ?var18
+    (name wmeTable_C1R2)
+    (value nil)
+    (description nil)
+    (row-number 2)
+    (column-number 1)
+)
+; MAIN::cell
+(modify ?var19
+    (name wmeTable_C1R3)
+    (value nil)
+    (description nil)
+    (row-number 3)
+    (column-number 1)
+)
+; MAIN::column
+(modify ?var23
+    (name wmeTable_Column1)
+    (cells ?var17 ?var18 ?var19)
+    (position 1)
+    (description nil)
+)
+; MAIN::table
+(modify ?var24
+    (name wmeTable)
+    (columns ?var23 ?var15 ?var7)
+)
+; MAIN::button
+(modify ?var28
+    (name hint)
+)
+; MAIN::button
+(modify ?var31
+    (name done)
+)
+; MAIN::problem
+(modify ?var33
+    (name init)
+    (interface-elements ?var31 ?var24 ?var28)
+    (subgoals)
+    (done nil)
+    (description nil)
+)

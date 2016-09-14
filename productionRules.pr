@@ -1,0 +1,180 @@
+(defrule subtract
+
+?var12246 <- (problem  (interface-elements $? ?var12254 $?)   )
+?var12254 <- (table  (columns $? ?var12255 $?))
+?var12255 <- (column  (cells $? ?var12256 $?)  )
+?var12256 <- (cell (name ?foa0) (value ?val0&~nil)   )
+
+?var12246 <- (problem  (interface-elements $? ?var12262 $?)   )
+?var12262 <- (table  (columns $? ?var12263 $?))
+?var12263 <- (column  (cells $? ?var12264 $?)  )
+?var12264 <- (cell (name ?foa1) (value ?val1&~nil)   )
+
+?var12246 <- (problem  (interface-elements ? ?var12270 ?)   )
+?var12270 <- (table  (columns ? ? ?var12271))
+?var12271 <- (column  (cells $? ?var12272 $?)  )
+?var12272 <- (cell  (name ?selection) (value ?input&nil)   )
+
+(test (distinctive ?var12256 ?var12272))
+(test (same-row ?var12256 ?var12272))
+(test (distinctive ?var12256 ?var12264))
+(test (same-row ?var12256 ?var12264))
+(test (distinctive ?var12264 ?var12272))
+(test (same-row ?var12264 ?var12272))
+
+
+(test (has-var-term ?val0 ) )
+(test (has-const-term ?val0 ) )
+
+=>
+
+(bind ?val2 (get-const-term ?val0))
+(bind ?input (skill-subtract ?val2))
+(update-jess-context ?selection UpdateTable ?input )
+(modify ?var12272 (value ?input))
+
+)
+
+
+(defrule subtract-typein
+
+?var9543 <- (problem  (interface-elements $? ?var9559 $?)   )
+?var9559 <- (table  (columns $? ?var9560 $?))
+?var9560 <- (column  (cells $?m9579 ?var9561 $?)  )
+?var9561 <- (cell (name ?foa0) (value ?val0&~nil)   )
+
+?var9543 <- (problem  (interface-elements ? ?var9567 ?)   )
+?var9567 <- (table  (columns ? ? ?var9568))
+?var9568 <- (column  (cells $? ?var9569 $?)  )
+?var9569 <- (cell (name ?foa1) (value ?val1&~nil)   )
+
+?var9543 <- (problem  (interface-elements $?m9592 ?var9559 $?)   )
+?var9559 <- (table  (columns $? ?var9560 $?))
+?var9560 <- (column  (cells $? ?var9562 $?)  )
+?var9562 <- (cell  (name ?selection) (value ?input&nil)   )
+
+(test (distinctive ?var9561 ?var9562))
+(test (same-column ?var9561 ?var9562))
+(test (consecutive-row ?var9561 ?var9562))
+(test (distinctive ?var9561 ?var9569))
+(test (same-row ?var9561 ?var9569))
+(test (distinctive ?var9569 ?var9562))
+(test (consecutive-row ?var9569 ?var9562))
+
+(test (is-skill-subtract ?val1 ) )
+
+=>
+
+(bind ?val2 (get-operand ?val1))
+(bind ?input (sub-term ?val0 ?val2))
+(update-jess-context ?selection UpdateTable ?input )
+(modify ?var9562 (value ?input))
+
+)
+
+
+(defrule divide
+
+?var6171 <- (problem  (interface-elements $? ?var6179 $?)   )
+?var6179 <- (table  (columns $? ?var6180 $?))
+?var6180 <- (column  (cells $? ?var6181 $?)  )
+?var6181 <- (cell (name ?foa0) (value ?val0&~nil)   )
+
+?var6171 <- (problem  (interface-elements $? ?var6187 $?)   )
+?var6187 <- (table  (columns $? ?var6188 $?))
+?var6188 <- (column  (cells $? ?var6189 $?)  )
+?var6189 <- (cell (name ?foa1) (value ?val1&~nil)   )
+
+?var6171 <- (problem  (interface-elements ? ?var6195 ?)   )
+?var6195 <- (table  (columns ? ? ?var6196))
+?var6196 <- (column  (cells $? ?var6197 $?)  )
+?var6197 <- (cell  (name ?selection) (value ?input&nil)   )
+
+(test (distinctive ?var6181 ?var6197))
+(test (same-row ?var6181 ?var6197))
+(test (distinctive ?var6181 ?var6189))
+(test (same-row ?var6181 ?var6189))
+(test (distinctive ?var6189 ?var6197))
+(test (same-row ?var6189 ?var6197))
+
+
+(test (has-coefficient ?val0 ) )
+(test (has-const-term ?val1 ) )
+
+=>
+
+(bind ?val2 (get-var-term ?val0))
+(bind ?val3 (coefficient ?val2))
+(bind ?input (skill-divide ?val3))
+(update-jess-context ?selection UpdateTable ?input )
+(modify ?var6197 (value ?input))
+
+)
+
+(defrule divide-typein
+
+?var4743 <- (problem  (interface-elements $? ?var4751 $?)   )
+?var4751 <- (table  (columns $? ?var4752 $?))
+?var4752 <- (column  (cells $? ?var4753 $?)  )
+?var4753 <- (cell (name ?foa0) (value ?val0&~nil)   )
+
+?var4743 <- (problem  (interface-elements ? ?var4767 ?)   )
+?var4767 <- (table  (columns ? ? ?var4768))
+?var4768 <- (column  (cells $? ?var4769 $?)  )
+?var4769 <- (cell (name ?foa1) (value ?val1&~nil)   )
+
+?var4743 <- (problem  (interface-elements $? ?var4751 $?)   )
+?var4751 <- (table  (columns $? ?var4752 $?))
+?var4752 <- (column  (cells $? ?var4754 $?)  )
+?var4754 <- (cell  (name ?selection) (value ?input&nil)   )
+
+(test (distinctive ?var4753 ?var4754))
+(test (same-column ?var4753 ?var4754))
+(test (consecutive-row ?var4753 ?var4754))
+(test (distinctive ?var4753 ?var4769))
+(test (same-row ?var4753 ?var4769))
+(test (distinctive ?var4769 ?var4754))
+(test (consecutive-row ?var4769 ?var4754))
+
+(test (is-skill-divide ?val1 ) )
+
+=>
+
+(bind ?val2 (get-operand ?val1))
+(bind ?input (div-term ?val0 ?val2))
+(update-jess-context ?selection UpdateTable ?input )
+(modify ?var4754 (value ?input))
+
+)
+
+
+(defrule done
+
+?var7968 <- (problem  (interface-elements $? ?var7976 $? )   )
+?var7976 <- (table  (columns $? ?var7977 $?))
+?var7977 <- (column  (cells $? ?var7979 $?)  )
+?var7979 <- (cell (name ?foa0) (value ?val0&~nil)   )
+
+?var7968 <- (problem  (interface-elements $? ?var7984 $? )   )
+?var7984 <- (table  (columns $? ?var7985 $?))
+?var7985 <- (column  (cells $? ?var7987 $?)  )
+?var7987 <- (cell (name ?foa1) (value ?val1&~nil)   )
+
+(test (distinctive ?var7979 ?var7987))
+(test (same-row ?var7979 ?var7987))
+
+(test (is-a-var-term ?val0 ) )
+(test (is-constant ?val1 ) )
+
+=>
+
+(update-jess-context done ButtonPressed -1 )
+(modify ?var7968 (done TRUE))
+
+)
+
+
+
+
+
+
