@@ -262,7 +262,7 @@ public class RuleEngine {
 		public static void main(String[] args) throws Exception {
 
 			String problem="";
-			System.out.println("-----Lightweight Rule Engine------");
+			System.out.println("-----Cognitive Modeling API------");
 			if (args.length!=1 || (args.length==1 && !args[0].contains("="))){
 				System.out.println("Usage: ant run <equation>");
 				System.out.println("No equation provided, demo with equation -3x+2=14");

@@ -23,9 +23,9 @@ public class AlgebraTask extends CognitiveTask{
 		super(taskName);
 	}
 
-	String wmeTypesFile="./wmeTypes.clp";
-	String initialFactsFile="./init.wme";
-	String productionRulesFile="./productionRules.pr";
+	String wmeTypesFile="./src/algebraDomain/wmeTypes.clp";
+	String initialFactsFile="./src/algebraDomain/init.wme";
+	String productionRulesFile="./src/algebraDomain/productionRules.pr";
 	String userDefJessPackage="algebraDomain.userDef";
 	
 	/**
