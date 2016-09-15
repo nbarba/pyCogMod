@@ -64,15 +64,17 @@ Solution Graph:
 
 ### Code structure
 
-The code is organized in two packages, and all files have comments explaining their purpose. 
+The code is organized in two packages: 
 * *engine package :* contains the generic Java code for the cognitive model engine.
 * *algebraDomain package :* contains the domain dependent Java code, regarding a cognitive model for the algebra domain.
   * *algebraDomain.userDef package:* contains the java functions that are used by the rules of the cognitive model (e.g. divide two numbers, does an equation have a coefficient etc).
-* *wmeTypes.clp:* the working memory templates corresponding to the interface elements we will be using 
-* *init.wme:* the configuration of the working memory elements (e.g. structure, initial values etc)
-* *productionRules.pr:* the actual cognitive model, a list of production rules describing how to solve equations
+  * *wmeTypes.clp:* the working memory templates corresponding to the interface elements we will be using 
+  * *init.wme:* the configuration of the working memory elements (e.g. structure, initial values etc)
+  * *productionRules.pr:* the actual cognitive model, a list of production rules describing how to solve equations
 
+### Using the API in your own domain
 
+To create the 
 
 
 ## License
