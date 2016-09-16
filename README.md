@@ -10,7 +10,6 @@ CogModAPI is a cognitive modeling testing API based on the [JESS rule engine](ht
 However, thanks to the amazing work by Carnegie Mellon's [CTAT team](http://ctat.pact.cs.cmu.edu/), there are tools that can help you easily create and debug cognitive models (i.e. tha last two bullets). To learn more about JESS and cognitive models, consider the following links:
  * [Jess documentation](http://www.jessrules.com/jess/docs/71/) (you will need this to write the production rules for the cognitive model)
  * [CTAT documentation](http://ctat.pact.cs.cmu.edu/docs/ctat_2_6/) (you will need this to create the necessary Jess templates and working memory configuration)
- * Cool paper by Vincent V. Aleven on Cognitive Modeling 
 
 
 ## Requirements 
