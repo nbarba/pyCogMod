@@ -37,7 +37,7 @@ The project comes with a cognitive model for solving algebra equations, so testi
 $ ant   # this will compile the code and fill out the /bin folder with the class files.
 $ java -cp ./bin/:/path/to/jess.jar engine/RuleEngine 2x+8=12  #alternatively, type ant -Dequation=2x+8=12 run
 ```
-where 2x+8=12 is the equation you want to solve (i.e. tha task). You should see something like this in the output: 
+where *2x+8=12* is the equation you want to solve (i.e. tha task). You should see something like this in the output: 
 ```
 -----Cognitive Model Testing------
 Solving equation 2x+8=12...
