@@ -153,6 +153,13 @@ The solution graph now contains the solution. To display the solution you may ei
 solution.printGraph();    /*print the solution graph */
 System.out.println(equationProblem.getTaskInterface().displaySolution(solution)); /*print the solution on the interface*/
 ```
+To test the cognitive model on another problem, you have to update the existing AlgebraTask with the the problem (or create a new Algebra Task), and reset the rule engine: 
+
+```java
+equationProblem.updateTaskName("2x=6");
+algebraSolver.resetRuleEngine(equationProblem);
+solution=algebraSolver.runEngine();
+```			
 
 ## License
 
