@@ -148,9 +148,10 @@ SolutionGraph solution=algebraSolver.runEngine();
 
 ```
 
-The solution graph now contains the solution. To display the solution in the interface, you may use:
+The solution graph now contains the solution. To display the solution you may either print the solution graph directly, or you may display the solution on the interface: 
 ```java
-System.out.println(equationProblem.getTaskInterface().displaySolution(solution));
+solution.printGraph();    /*print the solution graph */
+System.out.println(equationProblem.getTaskInterface().displaySolution(solution)); /*print the solution on the interface*/
 ```
 
 ## License
