@@ -16,12 +16,12 @@ However, thanks to the amazing work by Carnegie Mellon's [CTAT team](http://ctat
 
 This code is written in Java and requires the JESS rule engine. Due to licensing, source code or the JESS library cannot be included in this repo. However, if you do not have JESS, you can still download it from [here](http://www.jessrules.com/jess/download.shtml).
 
-Note: Once downloaded, the code must be packed in a jar file, using the command
+Note: Once you download JESS, the code must be packed in a jar file, using the command
 ```
 $ jar cvf jess.jar /path/to/jess/source
 ```
 
-Once downloaded, edit the build.xml, and set the path to jess.jar in line 9, i.e.
+After downloading the project (i.e. CogModAPI), edit the build.xml, and set the path to jess.jar in line 9, i.e.
 ```
 <property name="jessJarPath" value="/Users/nbarba/CMU/Tomodachi8-1-7-macfriendly/lib/jess.jar"></property>
 ```
