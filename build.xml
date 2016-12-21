@@ -6,7 +6,7 @@
   <!-- set global properties for this build -->
   <property name="src" location="src"/>
   <property name="bin" location="bin"/>
-  <property name="jessJarPath" value="/Users/nbarba/CMU/Tomodachi8-1-7-macfriendly/lib/jess.jar"></property>
+  <property name="jessJarPath" value="/Users/nbarba/CMU/lib/jess.jar"></property>
 
   <target name="init">
     <!-- Create the time stamp -->
