@@ -25,7 +25,7 @@ import jess.*;
 import engine.Sai;
 
 /**
- * Class that implements a JESS-based lightweight rule engine. Basically its a JESS wrapper for 
+ * Class that implements a JESS-based lightweight rule engine. Its basically a JESS wrapper for 
  * researchers to easily evaluate cognitive models without having to dive into JESS. 
  *  
  * @author Nikolaos Barmpalios {nbarmpalios@gmail.com}
@@ -108,6 +108,7 @@ public class RuleEngine {
 					
 		/**
 		 * Method that loads user defined jess functions, used in the LHS and RHS of the production rules.
+		 * @param packageName the packageName with the class files implementing the jess functions.
 		 * @throws IOException 
 		 * @throws ClassNotFoundException 
 		 * @throws IllegalAccessException 
