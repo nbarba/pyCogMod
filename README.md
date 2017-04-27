@@ -23,7 +23,7 @@ $ jar cvf jess.jar /path/to/jess/source
 
 After downloading the project (i.e. CogModAPI), edit the build.xml, and set the path to jess.jar in line 9, i.e.
 ```
-<property name="jessJarPath" value="/Users/nbarba/CMU/Tomodachi8-1-7-macfriendly/lib/jess.jar"></property>
+<property name="jessJarPath" value="/path/to/jess/download/jess.jar"></property>
 ```
 
 Thats it, after that the project should be compiling and running without glitches! 
