@@ -66,7 +66,7 @@ Solution Graph:
                             |.....< done : done,-1 ✓ >.....[state7]
 ```
 
-Note that each solution step displays the solution step in the following format: * skill applied: interface element, value, correctness*. So *subtract : wmeTable_C3R1,subtract 8 ✓* actually means that skill "subtract" was applied, thus the interface element "wmeTableC3R1" was filled with the text "subtract 8" which is correct "✓".
+Note that each solution step displays the solution step in the following format: * skill applied: interface element, value, correctness*. So "*subtract : wmeTable_C3R1,subtract 8 ✓*" actually means that skill "*subtract*" was applied (i.e. production rule named "*subtract*"), thus the interface element named "*wmeTable_C3R1*" was filled with the text "*subtract 8*" which is correct "✓".
 
 
 ### Code structure
