@@ -1,22 +1,23 @@
 # CogModAPI
 
-CogModAPI is a cognitive modeling testing API based on the [JESS rule engine](http://www.jessrules.com). It provides a simple and easy to use way to test a production rule cognitive model on a given task, provided that all the necessary JESS components are already there (i.e. working memory templates & configuration, the cognitive model itself). As an example, a simple cognitive model for solving simple algebra equations (i.e. the task is to solve an algebraic equation using only subtract and divide), together with all the necessary domain dependent functions and the JESS related structures.
+CogModAPI is a lightweight cognitive model testing API, based on the [JESS rule engine](http://www.jessrules.com). It is intented for researchers working with cognitive models, that need a fast, simple and reliable way to check a JESS-compatible production rule cognitive model on a given task, without having to worry about too much coding or low-level JESS functions.
+To use CogModAPI all the necessary JESS components of the cognitive model must already be defined, i.e. the working memory templates & configuration, the cognitive model itself. As an example, a simple cognitive model for solving simple algebra equations, together with all the necessary domain dependent functions and the JESS related structures, is provided for testing purposes.
 
 **Note**: Cognitive modeling is a complicated task, and generating a cognitive model requires a series steps, including: 
-  * writting code to implement domain dependent functions (e.g. for algebra this may be divide two numbers, figure out if an equation has a coefficient etc),
-  * writing the cognitive model, which is a set of production rules that uses the domain depedent functions and describes  how to perform a task (e.g. what to do when an equation is given)
-  * preparing whatever is necessary to setup the working memory of the rule engine that will "run" the cognitive model (e.g. templates, initalization etc).
+  * coding to implement domain dependent functions (e.g. for algebra this may be divide two numbers, figure out if an equation has a coefficient etc),
+  * coding the cognitive model itself, which is a set of production rules that uses the domain depedent functions and describe  how the task is solved (e.g. what to do when an equation is given)
+  * preparing whatever is necessary to setup the working memory of the rule engine that will "run" the cognitive model (e.g. an interface to perform the task, templates, initalization etc).
 
-However, thanks to the amazing work by Carnegie Mellon's [CTAT team](http://ctat.pact.cs.cmu.edu/), there are tools that can help you easily create and debug cognitive models (i.e. tha last two bullets). To learn more about JESS and cognitive models, consider the following links:
+However, thanks to the amazing work by Carnegie Mellon's [CTAT team](http://ctat.pact.cs.cmu.edu/), there are tools that can help you create and run cognitive models (i.e. tha last two bullets). To learn more about JESS and cognitive modeling in general, consider the following links:
  * [Jess documentation](http://www.jessrules.com/jess/docs/71/) (you will need this to write the production rules for the cognitive model)
  * [CTAT documentation](http://ctat.pact.cs.cmu.edu/docs/ctat_2_6/) (you will need this to create the necessary Jess templates and working memory configuration)
 
 
 ## Requirements 
 
-This code is written in Java and requires the JESS rule engine. Due to licensing, source code or the JESS library cannot be included in this repo. However, if you do not have JESS, you can still download it from [here](http://www.jessrules.com/jess/download.shtml).
+This code is written in Java and requires the JESS rule engine. Due to licensing, source code or the JESS library cannot be included in this repo. However, if you do not have JESS, you can download it from [here](http://www.jessrules.com/jess/download.shtml).
 
-Note: Once you download JESS, the code must be packed in a jar file, using the command
+Note: Once you download JESS, the code must be packed in a jar file using the command
 ```
 $ jar cvf jess.jar /path/to/jess/source
 ```
@@ -37,7 +38,7 @@ The project comes with a cognitive model for solving algebra equations, so testi
 $ ant   # this will compile the code and fill out the /bin folder with the class files.
 $ java -cp ./bin/:/path/to/jess.jar engine/RuleEngine 2x+8=12  #alternatively, type ant -Dequation=2x+8=12 run
 ```
-where *2x+8=12* is the equation you want to solve (i.e. tha task). You should see something like this in the output: 
+where *2x+8=12* is the equation you want to solve (i.e. tha task). The output will be a solution displayed on the provided interface, together with a solution graph that has all the necessary steps to solve the problem. E.g. for the problem *2x+8=12* you should see something like this in the output: 
 ```
 -----Cognitive Model Testing------
 Solving equation 2x+8=12...
@@ -64,6 +65,9 @@ Solution Graph:
                         [state6]
                             |.....< done : done,-1 ✓ >.....[state7]
 ```
+
+Note that in the above solution, each solution step has the following format:
+
 
 ### Code structure
 
