@@ -1,7 +1,7 @@
 # CogModAPI
 
 CogModAPI is a lightweight cognitive model testing API, based on the [JESS rule engine](http://www.jessrules.com). It is intented for researchers working with cognitive models, that need a fast, simple and reliable way to check a JESS-compatible production rule cognitive model on a given task, without having to worry about too much coding or low-level JESS functions.
-To use CogModAPI all the necessary JESS components of the cognitive model must already be defined, i.e. the working memory templates & configuration, the cognitive model itself. As an example, a simple cognitive model for solving simple algebra equations, together with all the necessary domain dependent functions and the JESS related structures, is provided for testing purposes.
+To use CogModAPI all the necessary JESS components of the cognitive model must already be defined, i.e. the working memory templates & configuration, the cognitive model itself. As an example, a simple cognitive model for solving simple algebra equations, together with all the necessary domain dependent functions and the JESS related structures, is provided for testing purposes. However, the provided API does not contain any domain dependent code and can be used for any domain (not just algebra).
 
 **Note**: Cognitive modeling is a complicated task, and generating a cognitive model requires a series steps, including: 
   * coding to implement domain dependent functions (e.g. for algebra this may be divide two numbers, figure out if an equation has a coefficient etc),
